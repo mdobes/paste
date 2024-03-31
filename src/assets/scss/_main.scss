@@ -44,3 +44,16 @@ pre {
     margin-bottom: 2rem;
     overflow: auto;
 }
+
+.error {
+    width: 100%;
+    background-color: $color-error-700;
+    border: 2px solid rgba(255, 255, 255, .15);
+    border-radius: 1rem;
+    resize: none;
+    color: $text-primary-500;
+    padding: 1.4rem;
+    scrollbar-gutter: auto;
+    margin-bottom: 2rem;
+    overflow: auto;
+}

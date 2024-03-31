@@ -17,13 +17,22 @@
             }
         });
     }
+
+    export let form;
+    console.log(form)
 </script>
 
 <!-- svelte-ignore a11y-autofocus -->
 
+{#if form?.fail}
+    <div class="error">
+        Your text is too large.
+    </div>
+{/if}
+
 <form method="POST">
     <div class="textarea_outer">
-        <textarea rows="20" autofocus required spellcheck="false" name="text"></textarea>
+        <textarea rows="20" autofocus required spellcheck="false" name="text">{form?.text ?? ''}</textarea>
     </div>
 
     <button><Icon icon="plus" size="14"/>&nbsp;Paste</button>

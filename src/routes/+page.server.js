@@ -1,6 +1,6 @@
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
 import { PRIVATE_AWS_KEY, PRIVATE_AWS_ACCESS, PRIVATE_MAX_KB, PRIVATE_AWS_PATH, PRIVATE_AWS_BUCKET, PRIVATE_LENGHT_ID } from '$env/static/private'
-import {redirect} from "@sveltejs/kit";
+import {fail, redirect} from "@sveltejs/kit";
 
 const putObject = async (text) => {
     const client = new S3Client({
@@ -36,15 +36,15 @@ export const actions = {
         const text = formData.get('text');
 
         if(text) {
-            if(new Blob([text]).size <= PRIVATE_MAX_KB){
+            if(new Blob([text]).size <= (PRIVATE_MAX_KB * 1024)){
                 let id = await putObject(text);
                 throw redirect(302, '/' + id);
 
             }else {
-                return {success: false};
+                return fail(413, { text, missing: false, fail: true });
             }
         }else{
-            return { success: false };
+            return fail(400, { text, missing: true });
         }
     },
 };
