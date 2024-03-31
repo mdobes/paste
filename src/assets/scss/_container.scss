@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    @include media-breakpoint-up(xl) {
+        margin-top: 2rem;
+    }
+    max-width: map-get($grid-breakpoints, xl);
+    width: 100%;
+    @include media-breakpoint-down(xl) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

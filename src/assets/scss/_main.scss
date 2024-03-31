@@ -1,0 +1,46 @@
+:root {
+    color-scheme: dark;
+}
+
+body {
+    background-color: $color-primary-500;
+    color: $text-primary-500;
+}
+
+*::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+*::-webkit-scrollbar-track-piece {
+    background-color: #00000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    z-index: 0;
+    background-color: rgba(255, 255, 255, .2);
+    left: 2px;
+    border-radius: 12px;
+}
+
+pre {
+    width: 100%;
+    background-color: $color-primary-600;
+    border: 2px solid rgba(255, 255, 255, .15);
+    border-radius: 1rem;
+    resize: none;
+    color: $text-primary-500;
+    padding: 1.4rem;
+    scrollbar-gutter: auto;
+    margin-bottom: 2rem;
+    overflow: auto;
+}
