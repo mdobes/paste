@@ -19,7 +19,6 @@
     }
 
     export let form;
-    console.log(form)
 </script>
 
 <!-- svelte-ignore a11y-autofocus -->
