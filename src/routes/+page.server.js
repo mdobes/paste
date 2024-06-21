@@ -1,14 +1,14 @@
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
-import { PRIVATE_AWS_KEY, PRIVATE_AWS_ACCESS, PRIVATE_MAX_KB, PRIVATE_AWS_PATH, PRIVATE_AWS_BUCKET, PRIVATE_LENGHT_ID } from '$env/static/private'
+import { PRIVATE_AWS_ENDPOINT, PRIVATE_AWS_ACCESSKEY, PRIVATE_AWS_SECRETKEY, PRIVATE_MAX_KB, PRIVATE_AWS_PATH, PRIVATE_AWS_BUCKET, PRIVATE_LENGHT_ID } from '$env/static/private'
 import {fail, redirect} from "@sveltejs/kit";
 
 const putObject = async (text) => {
     const client = new S3Client({
-        endpoint: "https://eu2.contabostorage.com",
+        endpoint: PRIVATE_AWS_ENDPOINT,
         region: "eu",
         credentials: {
-            accessKeyId: PRIVATE_AWS_KEY,
-            secretAccessKey: PRIVATE_AWS_ACCESS,
+            accessKeyId: PRIVATE_AWS_ACCESSKEY,
+            secretAccessKey: PRIVATE_AWS_SECRETKEY,
         },
         forcePathStyle: true
     });

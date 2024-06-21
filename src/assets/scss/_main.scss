@@ -32,6 +32,10 @@ body {
     border-radius: 12px;
 }
 
+h1 {
+    font-size: clamp(0.5rem, 7vw, 2.2rem);
+}
+
 pre {
     width: 100%;
     background-color: $color-primary-600;
@@ -49,7 +53,7 @@ pre {
     width: 100%;
     background-color: $color-error-700;
     border: 2px solid rgba(255, 255, 255, .15);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     resize: none;
     color: $text-primary-500;
     padding: 1.4rem;
